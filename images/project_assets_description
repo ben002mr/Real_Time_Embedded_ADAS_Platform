@@ -1,0 +1,147 @@
+REAL-TIME EMBEDDED ADAS PLATFORM
+Project Asset Descriptions
+
+========================================
+1. system_architecture.png
+========================================
+This image contains the complete embedded ADAS platform overview including:
+- Embedded hardware connection architecture
+- System architecture diagram
+- Circuit diagram
+- Workflow / flow diagram
+- Telemetry CSV preview
+- Serial monitor output
+- Hardware alert state demonstrations
+- Communication details between Raspberry Pi and NodeMCU
+
+The diagram explains the complete operation of the real-time embedded ADAS platform using Raspberry Pi 3B+ and NodeMCU ESP8266.
+
+========================================
+2. safe_state.jpeg
+========================================
+Hardware demonstration image showing SAFE alert condition.
+System behavior:
+- Green LED activated
+- No buzzer alert
+- Forward collision warning state = SAFE
+- Object detected at safe distance
+
+Hardware visible:
+- Raspberry Pi 3B+
+- Pi Camera Rev 1.3
+- NodeMCU ESP8266
+- HC-SR04 Ultrasonic Sensor
+- Breadboard LEDs
+- Active buzzer
+
+========================================
+3. danger_state.jpeg
+========================================
+Hardware demonstration image showing DANGER alert condition.
+System behavior:
+- Red LED activated
+- Buzzer activated
+- Forward collision warning state = DANGER
+- Object detected at critical distance
+
+Hardware visible:
+- Raspberry Pi 3B+
+- Pi Camera Rev 1.3
+- NodeMCU ESP8266
+- HC-SR04 Ultrasonic Sensor
+- Breadboard LEDs
+- Active buzzer
+
+========================================
+4. serial_monitor_output.png
+========================================
+Arduino IDE serial monitor output from NodeMCU ESP8266.
+
+The serial communication demonstrates:
+- SAFE state messages
+- WARNING state messages
+- DANGER state messages
+
+Communication Details:
+- Raspberry Pi sends driver state data through USB serial communication
+- NodeMCU processes received data
+- NodeMCU activates LEDs and buzzer according to system state
+
+Baud Rate:
+9600
+
+========================================
+5. telemetry_warning.png
+========================================
+Telemetry console output from the Raspberry Pi ADAS processing system.
+
+Displayed Parameters:
+- Face count
+- Eye count
+- Driver state
+- Forward collision warning state
+- System state
+- FPS
+- CPU usage
+
+This snapshot demonstrates:
+- WARNING state operation
+- Real-time telemetry monitoring
+- Sensor fusion operation
+- Embedded system performance monitoring
+
+========================================
+6. telemetry_drowsy.png
+========================================
+Telemetry console output showing driver drowsiness detection.
+
+Displayed Parameters:
+- Eye closure detection
+- Driver state = DROWSY
+- System danger state
+- FPS
+- CPU usage
+
+This snapshot demonstrates:
+- Driver monitoring functionality
+- Eye detection logic
+- Real-time drowsiness detection
+- Embedded AI processing pipeline
+
+========================================
+Hardware Communication Summary
+========================================
+- Raspberry Pi 3B+ runs the main ADAS software using Python.
+- Pi Camera Rev 1.3 connects through CSI interface.
+- Raspberry Pi communicates with NodeMCU ESP8266 through USB serial communication.
+- Serial device used:
+/dev/ttyUSB0
+
+- NodeMCU controls:
+  * Green LED (SAFE)
+  * Yellow LED (WARNING)
+  * Red LED (DANGER)
+  * Active buzzer
+
+- HC-SR04 ultrasonic sensor measures obstacle distance.
+
+- LEDs are connected through 260 Ohm resistors.
+
+- Raspberry Pi powered through:
+Micro USB cable connected to wall adapter.
+
+- Communication protocol:
+UART Serial Communication using PySerial.
+
+========================================
+Project Purpose
+========================================
+This project demonstrates:
+- Real-time embedded system design
+- Sensor fusion
+- Driver monitoring
+- Forward collision warning
+- Embedded hardware-software integration
+- Serial communication between edge devices
+- Real-time telemetry logging
+- Embedded AI and computer vision applications
